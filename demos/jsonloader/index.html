@@ -5,11 +5,10 @@
     <title>apiNG Demo</title>
 
     <!-- apiNG dependencies -->
-    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 
     <!-- apiNG -->
-    <script src="../dist/aping.js"></script>
+    <script src="../../dist/aping.js"></script>
 
     <!-- angular module -->
     <script src="app.js"></script>
@@ -20,15 +19,15 @@
     <style>
         body {
             font-family: 'Source Sans Pro', sans-serif;
-            background:#0d3349;
-            color:white;
-            padding:10px;
+            background: #0d3349;
+            color: white;
+            padding: 10px;
         }
 
         a:link,
         a:active,
         a:visited {
-            color:yellow;
+            color: yellow;
         }
     </style>
 
@@ -36,16 +35,15 @@
 <body ng-app="app">
 
 <h1>Unstyled, one result</h1>
-<aping
-    template-url="unstyled_template.html"
-    aping-jsonloader="[{ 'path': 'https://randomuser.me/api/' }]">
+<aping aping-jsonloader="[{ 'path': 'https://randomuser.me/api/', 'resultProperty':'results.0.user'}]">
+    <pre>{{results | json}}</pre>
 </aping>
 
 <hr>
 <h1>Styled, but two results</h1>
 <aping
-    template-url="template.html"
-    aping-jsonloader="[{ 'path': 'https://randomuser.me/api/' }, { 'path': 'https://randomuser.me/api/' }]">
+        template-url="template.html"
+        aping-jsonloader="[{ 'path': 'https://randomuser.me/api/', 'resultProperty':'results.0.user' }, { 'path': 'https://randomuser.me/api/', 'resultProperty':'results.0.user' }]">
 </aping>
 
 <br><br>

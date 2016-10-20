@@ -7,14 +7,14 @@ angular.module('jtt_aping_design_default', ['wu.masonry', 'linkify', 'angularMom
     .controller('apingDefaultDesignController', ['$scope', '$sce', function ($scope, $sce) {
 
         $scope.$on('apiNG.resultMerged', function () {
-            $scope.workingCopy = $scope.results;
+            //$scope.workingCopy = $scope.results;
         });
 
         $scope.getPlatformIcon = function (_platform) {
             switch (_platform) {
                 case "youtube":
                 case "twitter":
-                case "instagram":
+                case "wikipedia":
                 case "vimeo":
                 case "vine":
                 case "facebook":
